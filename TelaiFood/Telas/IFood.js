@@ -11,7 +11,14 @@ export default function IFood({ navegar }) {
   return (
     <View style={css.container}>
       <View style={css.header}>
-        <Image source={require('../imagens/logo_ifood_branco.png')} style={css.logoIfood} resizeMode="contain" />
+        <Image
+          source={require('../imagens/logo_ifood_branco.png')}
+          style={css.logoIfood}
+          resizeMode="contain"
+        />
+        <TouchableOpacity style={css.btnPerfil} onPress={() => navegar('Usuario')}>
+          <Text style={css.txtPerfil}>Perfil</Text>
+        </TouchableOpacity>
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -189,6 +196,16 @@ const css = StyleSheet.create({
     minWidth: 150,
     height: '170%',
     minHeight: 50,
+  },
+  btnPerfil: {
+    position: 'absolute',
+    right: 20,
+    top: 10,
+    backgroundColor: '#fff',
+    paddingVertical: 5,
+    paddingHorizontal: 15,
+    borderRadius: 20,
+    elevation: 5,
   },
   containerLojas: {
     flexDirection: 'row',

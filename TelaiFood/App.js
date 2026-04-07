@@ -4,9 +4,10 @@ import Produtos from './Telas/Produtos';
 import Pedido from './Telas/Pedido';
 import TelaCep from './Telas/TelaCep';
 import Usuario from './Telas/Usuario';
+import TelaLogin from './Telas/TelaLogin';
 
 export default function App() {
-  const [telaAtual, setTelaAtual] = useState('IFood');
+  const [telaAtual, setTelaAtual] = useState('TelaLogin');
   const [lojaSelecionada, setLojaSelecionada] = useState('');
   const [produtoSelecionado, setProdutoSelecionado] = useState(null);
 
@@ -26,5 +27,7 @@ export default function App() {
     return <Usuario navegar={navegar} />;
   } else if (telaAtual === 'TelaCep') {
     return <TelaCep navegar={navegar} />;
+  } else if (telaAtual === 'TelaLogin') {
+    return <TelaLogin navegar={navegar} />;
   }
 }
